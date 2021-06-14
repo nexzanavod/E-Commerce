@@ -7,11 +7,14 @@ const product = [
     id: 1,
     name: "Band",
     description: "Head Band",
+    price:'$10',
+
   },
   {
     id: 2,
     name: "Frock",
     description: "Rose Frock",
+    price:'$5',
   },
 ];
 
@@ -21,7 +24,7 @@ const Product = () => {
       {product.map((product) => (
         //xs = Big Device  // sm = small Devices
         <Grid item Key={product.id} xs={12} sm={6} lg={3}>
-          <Product />
+          <Product product={product} />
         </Grid>
       ))}
     </Grid>
