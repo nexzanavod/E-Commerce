@@ -10,12 +10,16 @@ const products = [
     name: "Band",
     description: "Head Band",
     price: "$10",
+    image:
+      "https://media.allure.com/photos/5d4340c7dbde5c000828f782/1:1/w_2000,h_2000,c_limit/turban-headband.jpg",
   },
   {
     id: 2,
     name: "Frock",
     description: "Rose Frock",
     price: "$5",
+    image:
+      "https://5.imimg.com/data5/WA/FG/MY-7083094/ladies-stylish-frock-500x500.jpg",
   },
 ];
 
