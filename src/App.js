@@ -14,10 +14,15 @@ const App = () => {
 
     setProducts(data);
   };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  console.log(products);
+
   return (
     <div>
-      <Navbar />
-      <Products />
+      {/* <Navbar /> */}
+      <Products products={products} />
     </div>
   );
 };
