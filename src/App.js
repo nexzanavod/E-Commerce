@@ -8,21 +8,36 @@ import { Products, Navbar } from "./components";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
 
+  //Product Function
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
 
     setProducts(data);
   };
+
+  //Cart function
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  };
+
+  //Add Cart Function
+  const handleAddToCart = async (productId, quantity) => {
+    const item = await commerce.cart.add(productId, quantity);
+
+    setCart(item.cart);
+  };
+
   useEffect(() => {
     fetchProducts();
+    fetchCart();
   }, []);
-  console.log(products);
-
+  console.log(cart);
   return (
     <div>
-      {/* <Navbar /> */}
-      <Products products={products} />
+      <Navbar totalItems={cart.total_items} />
+      <Products products={products} onAddToCart={handleAddToCart} />
     </div>
   );
 };
