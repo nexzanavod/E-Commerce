@@ -3,6 +3,8 @@ import { Grid } from "@material-ui/core";
 
 import Product from "./Product/Product";
 
+import "./styles";
+
 //Product That go to Grid
 // const products = [
 //   {
